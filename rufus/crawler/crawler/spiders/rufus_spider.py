@@ -99,8 +99,8 @@ summarizer = pipeline('summarization')
 
 class RufusSpider(scrapy.Spider):
     name = 'rufus'
-    allowed_domains = ['example.com']  # Change this to the real domain
-    start_urls = ['https://example.com']  # Change this to real URLs
+    allowed_domains = ['bbc.com']
+    start_urls = ['https://www.bbc.com']  # Change this to real URLs
 
     # Define section keywords for selective scraping
     relevant_sections = ["faq", "pricing", "application", "contact", "support"]
