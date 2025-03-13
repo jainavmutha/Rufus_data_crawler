@@ -134,25 +134,6 @@ Dates (e.g., "January 2024")
 summarize_text Method
 Uses Hugging Face's pre-trained transformer model to generate a summary of the extracted content. This method also ensures the content isn't too long to be processed by the model.
 
-Example Output
-When you run the spider, the extracted and processed content is saved as a JSON file. Here’s an example of the output:
-
-json
-Copy
-Edit
-{
-    "title": "FAQ - Example",
-    "url": "https://example.com/faq",
-    "content": "How can I apply? Visit our application page...",
-    "entities": [
-        ["Example Inc.", "ORG"],
-        ["2024", "DATE"]
-    ],
-    "summary": "Example Inc. provides applications online...",
-    "scraped_date": "Wed, 13 Mar 2025 10:30:00 GMT"
-}
-This output is structured and can be used for further processing or integration into a RAG system.
-
 Customizing for Your Use Case
 1. Change Relevant Sections
 You can modify the relevant_sections list to include other keywords or adjust the HTML tag types to better match the structure of the target website.
@@ -183,6 +164,7 @@ bash
 Copy
 Edit
 python -m spacy download en_core_web_sm
+
 2. Missing Dependencies
 If you get errors about missing libraries, ensure you have installed the required packages:
 
@@ -196,8 +178,10 @@ Ensure that the JSON output is being written correctly by verifying the file per
 python
 Copy
 Edit
+
 with open("scraped_output.json", "w", encoding="utf-8") as file:
     json.dump(scraped_data, file, indent=4)
+
 Conclusion
 Rufus Spider is a versatile tool for selectively scraping web content, cleaning and summarizing it, and producing structured output in JSON format. This can be useful for data analysis, RAG systems, or any other application that requires processed and structured web content.
 
