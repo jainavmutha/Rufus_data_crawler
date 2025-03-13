@@ -1,0 +1,15 @@
+scrapy
+spacy
+selenium
+beautifulsoup4
+requests
+lxml
+openai
+langchain
+faiss-cpu
+pinecone-client
+fastapi
+uvicorn
+pydantic
+tiktoken
+playwright
